@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xsi:schemaLocation="schema/table.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<record>
+<column name="id">0730b71a-4a8e-44d8-ba2d-6b2fb66e9659</column>
+<column name="postDate">2013-02-28 5:43:11 AM</column>
+<column name="description">The deadline is postponed to 2013&amp;#x2F;3&amp;#x2F;31. Good luck !</column>
+<column name="modifiedDate">2013-03-31 8:05:18 PM</column>
+<column name="updateDate">2013-02-28 5:43:11 AM</column>
+<column name="modified">1</column>
+</record>
+<record><column name="id">6e74ce06-f4a7-4ab3-9bb3-8a3a1dde5a91</column><column name="postDate">2013-03-31 10:16:24 PM</column><column name="description"><![CDATA[&lt;div onclick=&quot;alert&#40;&quot;haha&quot;&#41;&quot;&gt;
+ Due to LIBT policy, apart from regular lessons, not tutor lessons could be launched.
+ &lt;&#x2F;div&gt;]]></column><column name="modifiedDate">2013-03-31 10:17:12 PM</column><column name="modified">1</column></record></table>

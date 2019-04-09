@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Graph Theory - Brunel Computing Study Guide</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<script type="text/javascript" src="../lib/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../script/turn_tab.js"></script>
+<script type="text/javascript" src="../script/toggle_topics.js"></script>
+<script type="text/javascript" src="../script/cookie.js"></script>
+<script type="text/javascript" src="../script/validate.js"></script>
+<script type="text/javascript" src="../script/show_message.js"></script>
+<script type="text/javascript" src="../script/show_form_message.js"></script>
+<script type="text/javascript" src="../script/show_login2.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="header">
+<a id="banner" href="../index.html"></a>
+<div id="main_nav">
+<a href="../index.html">HOME</a>
+<a href="../revision.html">REVISION</a>
+<a href="../view-question.jsp">VIEW QUESTION</a>
+<a href="../about.html">ABOUT</a>
+<a href="../contact.html">CONTACT</a>
+<a class="link-button" href="../ask-question.html">ASK QUESTION</a>
+</div>
+</div>
+
+<div id="main-wrapper">
+
+<div id="sidebar">
+<h3><a class="local_nav_header" href="index.html">Logic and Computation</a></h3>
+<p><a class="local_nav_item" href="set.html">Sets Theory</a></p>
+<p><a class="local_nav_item" href="lists.html">Lists</a></p>
+<p><a class="local_nav_item" href="graph_theory.html">Graph Theory</a></p>
+<p><a class="local_nav_item" href="std.html">State Transition Diagram</a></p>
+<p><a class="local_nav_item" href="fsm.html">Finite State Machine</a></p>
+<p><a class="local_nav_item" href="compiler.html">Compilers</a></p>
+</div>
+
+<div id="content_wrapper">
+<div id="tab_01" class="tab activated_tab"><a href="#">Key Concept</a></div>
+<div id="tab_02" class="tab"><a href="#">Summary</a></div>
+<div id="tab-content_01" class="content content_with_tab"> 
+<h1>Graph Theory</h1>
+
+<div class="content-header">What is Graph Theory?</div>
+<div class="content-paragraph"> 
+ <ul>
+        <li>Graphs are extremely important in Computer Science.</li>
+        <li>Graphs can assist in finding a way/new approaches  to represent the solution to a problem</li>
+        <li>Graph theory can also lead us directly to a solution.</li>
+        <li>Graph theoretical ideas are highly utilized by computer science applications, especially in research areas of computer science, such as data mining, image segmentation, clustering, image capturing, networking etc.,
+          <ul>
+            <li>For example a data structure can be designed in the form of tree which in turn utilize vertices and edges.</li>
+            <li>Similarly modelling of network topologies can be done using graph concepts.</li>
+          </ul>
+        </li>
+        <li>If you follow the flow of a program in terms of the different constructs it contains the internal structure of a program (abstract syntax tree)…
+          <ul>
+            <li>this will be covered soon in the form of State transition, Finite state machine, algorithms and complexity and so on.</li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">What is a graph?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>A graph consists of two things
+          <ul>
+            <li>Nodes (circles or vertices)
+              <ul>
+                <li>Nodes are sometimes called vertices</li>
+              </ul>
+            </li>
+            <li>Edges (lines connecting nodes)
+              <ul>
+                <li>Edges are sometimes called arcs</li>
+                <li>An edge may have a direction or not</li>
+                <li>A graph whose edges do not have direction is called undirected</li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>Undirected Graph Example</li>
+            <li><img src="../img/logic/graph/graph_01.png"/></li>
+            <li>Directed Graph Example</li>
+            <li><img src="../img/logic/graph/graph_02.png"/></li>
+          </ul>
+        </li>
+      </ul>
+      <ul><li>The edges can also be weighted or unweighted.
+          <ul>
+            <li><img src="../img/logic/graph/graph_03.png"/></li>
+          </ul>
+      </li>
+        <li>Degree of a Vertex
+          <ul>
+            <li>For undirected graph the degree of a node is the number of edges involving in that node.</li>
+            <li>So, number of edges of for A will be 2.
+              <ul>
+                <li><img src="../img/logic/graph/graph_04.png"/></li>
+              </ul>
+            </li>
+            <li>For directed graph we have indegree and outdegree.
+              <ul>
+                <li>Indegree: number of the edges that arrive  to a node   </li>
+                <li>Outdegree: number of edges that departing from a node</li>
+              </ul>
+            </li>
+            <li>So, indegree of A will be none</li>
+            <li>Outdegree of A will be 2
+              <ul>
+                <li><img src="../img/logic/graph/graph_05.png"/></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">Some applications where direction are used</div>
+<div class="content-paragraph"> 
+  <ul>
+        <li>The flow of a program would show direction</li>
+        <li>The if statement
+          <ul>
+            <li>The if statement allows you to run different chunks of code (or no code at all) depending on a condition or conditions. Here's a simple example:
+              <ul>
+                <li>if ( x &lt; 10 ) { alert ( &quot;x is less than 10&quot; ); }</li>
+                <li>You can use the else statement to run an alternative block of code if the condition in the if statement is not met. For example:</li>
+                <li>if ( x &lt; 10 ) { alert ( &quot;x is less than 10&quot; ); } else { alert ( &quot;x is 10 or greater&quot; ); }</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">Represent Graph by Set</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>The nodes (Vertex) can be represented as a set:
+          <ul>
+            <li>G = &lt;v,E&gt; where V stands for vertices and E stands for Edges</li>
+            <li>Vertices are usually labelled as V ={A,B,C,D}</li>
+            <li>Set of edges can be represented as E ={&lt;A,B&gt;, &lt;B,C&gt;,&lt;C,B&gt;}. Direction is very important here. We can have a directed or undirected graph. Lets go for some examples.</li>
+          </ul>
+        </li>
+        <li>Example :
+          <ul>
+            <li>G = &lt;V,E&gt; where,</li>
+            <li>V ={A,B,C,D} and</li>
+            <li>E ={(A,B),(C,B),(A,D),(D,B),(D,C)},</li>
+            <li>and graph G is directed here</li>
+            <li>How are we going to draw the graph?</li>
+            <li><img src="../img/logic/graph/graph_06.png"/></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>More on Edge 
+          <ul>
+            <li>An edge may be labelled by a pair of vertices, for instance e = (v, w) where e stands for edge, v and w stands for vertices</li>
+            <li>e is said to be incident on v and w</li>
+            <li>Isolated vertex = a vertex without incident edges
+              <ul>
+                <li><img src="../img/logic/graph/graph_07.png"/></li>
+              </ul>
+            </li>
+            <li>Parallel edges
+              <ul>
+                <li>Two or more edges joining a pair of vertices. In the example below, a and b are joined by two parallel edges</li>
+                <li><img src="../img/logic/graph/graph_08.png"/></li>
+              </ul>
+            </li>
+            <li>Loops
+              <ul>
+                <li>An edge that starts and ends at the same vertex. In the example, vertex d has a loop.</li>
+                <li><img src="../img/logic/graph/graph_09.png"/></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">What is Path?</div>
+<div class="content-paragraph"> 
+    <ul>
+        <li>Definition:
+          <ul>
+            <li>A path p through a graph is a traversal of consecutive vertices along a sequence of edges.
+                <ul>
+                  <li>By this definition, the vertex at the end of one edge in the sequence must also be the vertex at the beginning of the next edge in the sequence</li>
+                </ul>
+            </li>
+            <li>The vertices that begin and end the path are termed the initial vertex and terminal vertex, respectively. </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>Path example
+          <ul>
+            <li><img src="../img/logic/graph/graph_10.png"/></li>
+          </ul>
+        </li>
+        <li>From the graph below, P = {A,D,B} is a path, P = {A,D,C,B} is a path
+          <ul>
+            <li>P ={A,B,C} is not a path</li>
+            <li>P ={A,D,A} is ?</li>
+            <li>P ={D,B,A} is ?</li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">What is Reachability?</div>
+<div class="content-paragraph"> 
+  <ul>
+        <li>Definition:
+          <ul>
+            <li>If a vertex is reachable from another vertex then a path exists from the one vertex to the other vertex. </li>
+            <li>Also, if vertex B is reachable from vertex A and vertex C is reachable from vertex B, then it follows that vertex C is reachable from vertex A. </li>
+            <li><img src="../img/logic/graph/graph_11.png"/></li>
+          </ul>
+        </li>
+        <li>In the road map example, a driver can reach west Drayton from Brunel, and the same driver can reach Heathrow from west Drayton.  Therefore, Heathrow is considered by the driver to be reachable from Brunel.
+          <ul>
+            <li><img src="../img/logic/graph/graph_12.png"/></li>
+          </ul>
+        </li>
+        <li>The definition of reachability holds true for both directed and undirected graphs.
+          <ul>
+            <li><img src="../img/logic/graph/graph_13.png"/></li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">What is Hamiltonian Cycle?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>Suppose we visit every node once and only once.</li>
+        <li>We start at a node n and finish up at n.</li>
+        <li>In such a case, we have completed a Hamiltonian cycle
+          <ul>
+            <li><img src="../img/logic/graph/graph_14.png"/></li>
+          </ul>
+        </li>
+        <li>So lets perform a Hamiltonian cycle from the graph below</li>
+        <li>Lets start with 1, then move to 6, then to 5, then to 3, then to 2, then 4 and back to 1
+          <ul>
+            <li><img src="../img/logic/graph/graph_15.png"/></li>
+          </ul>
+        </li>
+        <li>Another example:
+          <ul>
+            <li><img src="../img/logic/graph/graph_16.png"/></li>
+          </ul>
+        </li>
+        <li>A further example
+          <ul>
+            <li>Input
+              <ul>
+                <li><img src="../img/logic/graph/graph_17.png"/></li>
+              </ul>
+            </li>
+            <li>Output
+              <ul>
+                <li><img src="../img/logic/graph/graph_18.png"/></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">What is Flow graph?</div>
+<div class="content-paragraph"> 
+  <ul>
+        <li>Start node : indegree of zero (no edges leading in)</li>
+        <li>Stop node : outdegree of zero (no edges leading out)</li>
+        <li>Procedure node : outdegree = 1</li>
+        <li>Predicate node : outdegree &gt; 1 (makes a decision)</li>
+      </ul>
+      <ul>
+        <li>Control Flow Graphs (CFGs): Sequencing
+          <ul>
+            <li>Given part of a program in the form of s1;s2 (statements s1 and s2) we:
+              <ul>
+                <li>include an arc from the node for s1 to the node for s2</li>
+              </ul>
+            </li>
+            <li>Example: x=1; x=x+1; is represented by:</li>
+            <li><img src="../img/logic/graph/graph_19.png"/></li>
+            <li>If then: an example</li>
+            <li><img src="../img/logic/graph/graph_20.png"/></li>
+            <li>The CFG means:
+              <ul>
+                <li>We start</li>
+                <li>Then we check (x&gt;0)</li>
+                <li>We might then:</li>
+                <li>End or</li>
+                <li>Execute x=1; followed by End</li>
+              </ul>
+            </li>
+            <li>While loop: example</li>
+            <li><img src="../img/logic/graph/graph_21.png"/></li>
+            <li>while (x&gt;0) {x=x-2;}</li>
+            <li>The CFG means:
+              <ul>
+                <li>We start</li>
+                <li>Then we check (x&gt;0)</li>
+                <li>We might then:</li>
+                <li>End or</li>
+                <li>Execute x=x-2 then return to check (x&gt;0)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</div>
+</div>
+
+
+<div id="tab-content_02" class="content content_with_tab">
+<h1>Graph Theory</h1>
+<h2>Summary</h2>
+      <ul>
+        <li>You see graphs everywhere in computing</li>
+        <li>The terminology we have learnt helps us to understand these graphs more deeply</li>
+        <li>Graphs:
+          <ul>
+            <li>Introduction and why in computer science</li>
+          </ul>
+        </li>
+        <li>Structure
+          <ul>
+            <li>Vertices/edges; direct/indirect</li>
+            <li>Degrees of a vertex</li>
+          </ul>
+        </li>
+        <li>Paths/reachability</li>
+        <li>Hamiltonian tour</li>
+        <li>Control flow Graph</li>
+        <li>You see graph everywhere in computing</li>
+        <li>The terminology we have learnt helps us to understand these graphs more deeply</li>
+        <li>With the help of Graph
+          <ul>
+            <li>You will be able to understand:</li>
+            <li>State Transition Diagram (STD)</li>
+            <li>Finite State Machine (FSM)</li>
+            <li>Programming Logic</li>
+            <li>Complexity and so on…. </li>
+            <li>…which will be covered soon.</li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div id="footer"><p>Copyright © 2012 LIBT. All Rights Reserved. | <a href="../reference.html">Reference</a> | <a href="../admin-panel.jsp" id="open-login-box">admin panel</a></p></div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

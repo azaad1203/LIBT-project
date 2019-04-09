@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Lists - Brunel Computing Study Guide</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<script type="text/javascript" src="../lib/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../script/turn_tab.js"></script>
+<script type="text/javascript" src="../script/toggle_topics.js"></script>
+<script type="text/javascript" src="../script/cookie.js"></script>
+<script type="text/javascript" src="../script/validate.js"></script>
+<script type="text/javascript" src="../script/show_message.js"></script>
+<script type="text/javascript" src="../script/show_form_message.js"></script>
+<script type="text/javascript" src="../script/show_login2.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="header">
+<a id="banner" href="../index.html"></a>
+<div id="main_nav">
+<a href="../index.html">HOME</a>
+<a href="../revision.html">REVISION</a>
+<a href="../view-question.jsp">VIEW QUESTION</a>
+<a href="../about.html">ABOUT</a>
+<a href="../contact.html">CONTACT</a>
+<a class="link-button" href="../ask-question.html">ASK QUESTION</a>
+</div>
+</div>
+
+<div id="main-wrapper">
+
+<div id="sidebar">
+<h3><a class="local_nav_header" href="index.html">Logic and Computation</a></h3>
+<p><a class="local_nav_item" href="set.html">Sets Theory</a></p>
+<p><a class="local_nav_item" href="lists.html">Lists</a></p>
+<p><a class="local_nav_item" href="graph_theory.html">Graph Theory</a></p>
+<p><a class="local_nav_item" href="std.html">State Transition Diagram</a></p>
+<p><a class="local_nav_item" href="fsm.html">Finite State Machine</a></p>
+<p><a class="local_nav_item" href="compiler.html">Compilers</a></p>
+</div>
+
+<div id="content_wrapper">
+<div id="tab_01" class="tab activated_tab"><a href="#">Key Concept</a></div>
+<div id="tab_02" class="tab"><a href="#">Example</a></div>
+<div id="tab-content_01" class="content content_with_tab"> 
+<h1>Finite State Machines</h1>
+
+<h2>What is Finite State Machines (FSM)?</h2>
+<ul>
+        <li>Formal, mathematical version of state transition diagrams (STD).</li>
+        <li>Define the behaviour of a simple machine</li>
+        <li>Allow mathematical operations to be performed on them</li>
+        <li>A (deterministic) finite state machine is defined by sextuple (S,S0,X,Y, μ,λ) in which:
+          <div>
+            <ul>
+              <li>S is a finite (fixed) set of states and S0 is the initial state</li>
+              <li>X is the finite input alphabet/set, for e.g ch for (change)</li>
+              <li>Y is the finite output alphabet/set (channel 1, channel 2)</li>
+              <li>function μ is the state transfer function</li>
+              <li>function λ is the output function</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+</div>
+<div id="tab-content_02" class="content content_with_tab">
+<h1>Finite State Machines</h1>
+<div class="content-header">Example 1: Light Switch</div>   
+<div class="content-paragraph">   
+      <ul>
+        <li>We will consider the following system:
+          <ul>
+            <li>there are three states for your ‘light switch’: ON, DIM, OFF</li>
+            <li>the control system receives a message ch indicating when it should change the state.</li>
+            <li>it changes state and outputs a value to the state, telling them what the new state should be.</li>
+            <li>Sequence is: on, dim, off and then back to on</li>
+          </ul>
+        </li>
+        <li>So, how to define and draw Light switch FSM??</li>
+        <li>FSM: Light Switch – Defined by
+          <ul>
+            <li>The FSM T is defined by:
+              <ul>
+                <li>State set {S0, S1,S2}</li>
+                <li>Initial state is S0</li>
+                <li>Input alphabet {ch}</li>
+                <li>Output alphabet: {On ,Dim ,Off}</li>
+                <li>Sequence: On, Dim, Off and back to On</li>
+                <li>State transfer function: μ(S0,ch)=S1 , μ(S1,ch)=S2, μ(S2,ch)=S0</li>
+                <li>Output function: λ(S0,ch)= Dim , λ(S1,ch)=Off, λ(S2,ch)=On</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>State diagram for FSM T
+          <ul>
+            <li>Initial state is at S0</li>
+            <li><img src="../img/logic/fsm/fsm_01.png" height="178" width="418"/></li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">Example 2: TV channels</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>We will consider the following system:
+          <ul>
+            <li>there are four channels for your TV: BBC1, BBC2, ITV, and Ch4</li>
+            <li>the control system receives a message ch indicating when it should change the channel.</li>
+            <li>it changes state and outputs a value to the channels telling them what the channel should be.</li>
+            <li>Sequence: BBC1,BBC2,ITV,Ch4 and then back to BBC1</li>
+          </ul>
+        </li>
+        <li>Question: Define and Draw FSM T</li>
+        <li>The FSM T is defined by:
+          <ul>
+            <li>State set {S0,S1,S2,S3}</li>
+            <li>Initial state is S0</li>
+            <li>Input alphabet {ch}</li>
+            <li>Output alphabet: {BBC1,BBC2,ITV,Ch4}</li>
+            <li>Sequence: BBC1,BBC2,ITV,Ch4, BBC1</li>
+            <li>State transfer function: μ (S0,ch)=S1 , μ (S1,ch)=S2 , μ(S2,ch)=S3 , μ(S3,ch)=S0</li>
+            <li>Output function: λ(S0,ch)= BBC2 , λ(S1,ch)=ITV , λ(S2,ch)=Ch4 , λ(S3,ch)=BBC1</li>
+          </ul>
+        </li>
+        <li>State diagram for FSM T
+          <ul>
+            <li>My initial state is at BBC1</li>
+            <li><img src="../img/logic/fsm/fsm_02.png" height="183" width="390"/></li>
+          </ul>
+        </li>
+      </ul>
+
+</div>
+
+<div class="content-header">Landline and call waiting FSM example</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>Specification of a simple machine to handle call waiting</li>
+        <li>Lets do a single call first where nobody is waiting</li>
+        <li>(Case 1:Single call)
+          <ul>
+            <li>You are near the phone</li>
+            <li>Somebody calls and you answer. You have a conversation and then you end the call by hang up.</li>
+          </ul>
+        </li>
+      </ul>
+    <li>Landline and single call FSM</li>
+      <ul>
+        <li>In terms of FSM, our single call will look like this
+          <ul>
+            <li>Initial state or idle (Ta)</li>
+            <li>Single Call (Tb)</li>
+            <li><img src="../img/logic/fsm/fsm_03.png" height="189" width="237"/></li>
+          </ul>
+        </li>
+        <li>(Case 1: Call waiting)
+          <ul>
+            <li>You are near the phone</li>
+            <li>Somebody calls and you answer. You have a conversation (CASE 1 –single call)</li>
+            <li>Now, somebody else calls, you receive a signal ‘beep’. There is a call waiting</li>
+            <li>So, you switch between conversations until one of them hangs up</li>
+          </ul>
+        </li>
+        <li>Ta – Phone idle (initial state)</li>
+        <li>Tb – On a single call</li>
+        <li>Tc – On call A [1ST CALL] and call B waiting [new 2ND call]</li>
+        <li>Td -  On call B [new 2ND call] and</li>
+        <li>     call A [1ST CALL] waiting. In other words, you switch between A and B</li>
+        <li>&lt;S,S0,X,Y,μ,λ&gt;
+                <ul>
+                  <li>S={Ta,Tb,Tc,Td}</li>
+                  <li>S0=Ta</li>
+                  <li>X={pickup,hang-up,switch,answer_beep}</li>
+                  <li>Y=phone idle, on a single Call, on call A and call B waiting, on call B and Call A waiting</li>
+                  <li>μ={(Ta, pickup) → Tb, (Tb, hang-up) → Ta, (Tb, answer_beep) → Td, (Tc, hang-up) → Tb, (Tc, switch) → Td, (Td, switch) → Tc, (Tc, switch) → Td, (Td, hang-up) → Tb}</li>
+                </ul>
+        </li>
+        <li>In terms of FSM, our call waiting state will look like this. Lets do it in real world…next</li>
+        <li><img src="../img/logic/fsm/fsm_04.png" height="402" width="317"/></li>
+      </ul>
+
+</div>
+
+<div class="content-header">Robot Nightclub Doorman example – Even Balance (Define/Draw FSM)</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>&lt;S,S0,X,Y,μ,λ&gt;</li>
+        <li>S={Ra,Rb,Rc}</li>
+        <li>S0=Ra</li>
+        <li>X={Male, Female}</li>
+        <li>Y={‘Welcome’ (it’s a male or a female), ‘Sorry (it should be a male or a female), come back later’}</li>
+        <li>μ={(Ra, Male) → Rb, (Ra, Female) → Rc, (Rb, Female) → Rc, (Rc, Male) → Rb},(Rb, Male) → Rb, (Rc, Female) → Rc</li>
+        <li>λ={(Ra, Male)→ ‘Welcome’ (it’s a male),  (Ra, Female)→ ‘Welcome’(it’s a female),  (Rb, Female)→ ‘Welcome’’ (it’s a female) (Rc, Male)→ ‘Welcome’ (it’s a male), (Rb, Male) → ‘Sorry, come back later’ (it should be a female) (Rc, Female) → ‘Sorry, come back later’, (it should be a male)’}</li>
+        <li><img src="../img/logic/fsm/fsm_05.png" height="229" width="438"/></li>
+        <li>Case 1 :<br clear="none" />
+            <ul>
+              <li>1. A male appears by the door
+                <ul>
+                  <li>“welcome” (Ra – Rb)</li>
+                </ul>
+              </li>
+              <li>Now, as it is even balance, we need a female next</li>
+              <li>2. A female appears by the door
+                <ul>
+                  <li>“welcome” (Rb –Rc)</li>
+                </ul>
+              </li>
+              <li>Now, as it is even balance, we need a boy next</li>
+              <li>3. A male appears by the door
+                <ul>
+                  <li>“welcome” (Rc – Rb)</li>
+                </ul>
+              </li>
+              <li>Now, as it is even balance, we need a female next. Suppose a male appear next.
+                <ul>
+                  <li>“Sorry, come back later” (Rb-Rb)</li>
+                </ul>
+              </li>
+              <li>4. A female appears by the door
+                <ul>
+                  <li>“welcome” (Rb –Rc)</li>
+                </ul>
+              </li>
+            </ul>
+        </li>
+        <li>Case 2
+          <ul>
+            <li>1. A female appears by the door
+              <ul>
+                <li>“welcome” (Ra – Rc)</li>
+              </ul>
+            </li>
+            <li>Now, as it is even balance, we need a male next</li>
+            <li>2. A male appears by the door
+              <ul>
+                <li>“welcome” (Rc –Rb)</li>
+              </ul>
+            </li>
+            <li>Now, as it is even balance, we need a female next</li>
+            <li>3. A female appears by the door
+              <ul>
+                <li>“welcome” (Rb – Rc)</li>
+              </ul>
+            </li>
+            <li>Now, as it is even balance, we need a male next. Suppose a female appears next.
+              <ul>
+                <li>“Sorry, come back later” (Rc-Rc)</li>
+              </ul>
+            </li>
+            <li>Another female appears
+              <ul>
+                <li>“Sorry, come back later” (Rc-Rc)</li>
+              </ul>
+            </li>
+            <li>4. A male appears by the door
+              <ul>
+                <li>“welcome” (Rc –Rb)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul></div>
+
+<div class="content-header">Robot Nightclub Doorman example –Girl’s Choice (GBBB)</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>μ={(Ra, girl) → Rb, (Rb, boy) → Rc, (Rc, boy) → Rd, (Rd, boy) → Re, (Re, girl) → Rb, (Ra, boy) → Rc, (Rb, girl) – Rb, (Rc, boy) → Rc, (Rd, girl) → Rd, (Re, boy) → Re}</li>
+        <li>λ={(Ra,girl)→‘Welcome’,    (Rb,boy)→ ‘Welcome’,     (Rc, boy)→ ‘Welcome’,     (Rd, boy) → ‘Welcome’,     (Re, girl)→ ‘Welcome’,     (Ra, boy) → ‘Welcome’,     (Ra, boy) → ‘Welcome’,     (Rb, girl) →’sorry, come back later’,     (Rc, girl) → ’sorry, come back later’,<br clear="none" />
+          (Rd, girl) → ’sorry, come back later’,      (Re, boy) → ’sorry, come back later’}</li>
+        <li><img src="../img/logic/fsm/fsm_06.png" height="499" width="302"/></li>
+      </ul>
+</div>
+
+</div>
+<div id="footer"><p>Copyright © 2012 LIBT. All Rights Reserved. | <a href="../reference.html">Reference</a> | <a href="../admin-panel.jsp" id="open-login-box">admin panel</a></p></div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Lists - Brunel Computing Study Guide</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<script type="text/javascript" src="../lib/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../script/turn_tab.js"></script>
+<script type="text/javascript" src="../script/toggle_topics.js"></script>
+<script type="text/javascript" src="../script/cookie.js"></script>
+<script type="text/javascript" src="../script/validate.js"></script>
+<script type="text/javascript" src="../script/show_message.js"></script>
+<script type="text/javascript" src="../script/show_form_message.js"></script>
+<script type="text/javascript" src="../script/show_login2.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="header">
+<a id="banner" href="../index.html"></a>
+<div id="main_nav">
+<a href="../index.html">HOME</a>
+<a href="../revision.html">REVISION</a>
+<a href="../view-question.jsp">VIEW QUESTION</a>
+<a href="../about.html">ABOUT</a>
+<a href="../contact.html">CONTACT</a>
+<a class="link-button" href="../ask-question.html">ASK QUESTION</a>
+</div>
+</div>
+
+<div id="main-wrapper">
+
+<div id="sidebar">
+<h3><a class="local_nav_header" href="index.html">Logic and Computation</a></h3>
+<p><a class="local_nav_item" href="set.html">Sets Theory</a></p>
+<p><a class="local_nav_item" href="lists.html">Lists</a></p>
+<p><a class="local_nav_item" href="graph_theory.html">Graph Theory</a></p>
+<p><a class="local_nav_item" href="std.html">State Transition Diagram</a></p>
+<p><a class="local_nav_item" href="fsm.html">Finite State Machine</a></p>
+<p><a class="local_nav_item" href="compiler.html">Compilers</a></p>
+</div>
+
+<div id="content_wrapper">
+<div id="tab_01" class="tab activated_tab"><a href="#">Key Concept</a></div>
+<div id="tab-content_01" class="content content_with_tab"> 
+<h1>Lists</h1>
+
+<div class="content-header">What are Lists?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>A list (also known as sequence), is an abstract data type that implements an ordered collection of items or elements</li>
+        <li>Unlike sets, a list can have repetitive items or elements.</li>
+        <li>A list stores elements in a sequence
+          <ul>
+            <li>We can access these elements using different functions</li>
+            <li>These functions operate directly on the data structure</li>
+          </ul>
+        </li>
+        <li>Can be (theoretically) of infinite length</li>
+      </ul>
+</div>
+<div class="content-header">Why talk about them?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>Common to declarative languages
+          <ul>
+            <li>Logic: Prolog</li>
+          </ul>
+        </li>
+        <li>Useful for reasoning about software due to their mathematical properties
+          <ul>
+            <li>Understanding, Proving properties (structural induction)</li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">How to Represent List?</div>
+<div class="content-paragraph"> 
+   <ul>
+          <li>Membership
+            <ul>
+              <li>List A = [1,2,3,4]</li>
+              <li>For the list A
+                <ul>
+                  <li>contains 4 elements</li>
+                  <li>element 1 is a member of the list, 7 isn't.</li>
+                  <li>1 is the first element of the list, 2 is the second element, 3 the third element and 4 the last element</li>
+                </ul>
+              </li>
+              </ul>
+          </li>
+          <li>Equally, a list can contain different data types:
+                <ul>
+                  <li>[“Portugal”, “Brazil”, “Germany”]   Strings</li>
+                  <li>[2.33,5.66,1.2,3.44,9.8] Reals</li>
+                  <li>['H','e','l','l','o'] Chars</li>
+                  <li>[ ]  A list can be empty</li>
+                  <li>Mixed types in some languages</li>
+                </ul>
+              <ul><li>Note that unlike sets, a list can contain repeated elements:
+                <ul>
+                  <li>[1,2,3,4,3,4,3,4] is a valid list</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Relationship
+            <ul>
+              <li>The &quot;head&quot; of the list is the first element of the list</li>
+              <li>The &quot;tail&quot; is the remainder of the list</li>
+              <li>For the list:
+                <ul>
+                  <li>L =[1,2,3,4],</li>
+                  <li>Head = 1, Tail = [2,3,4]</li>
+                  <li>More formally, head(L) = 1 and tail(L) = [2,3,4] </li>
+                </ul>
+              </li>
+              <li>Note: 
+                <ul>
+                  <li>function head() takes a list and returns an element of the list (the first element)</li>
+                  <li>function tail() takes a list as a parameter and returns a list (all elements excluding the head)</li>
+                </ul>
+              </li>
+              </ul>
+          </li>
+          </ul>
+</div>
+<div class="content-header">What is List operation?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>There are 5 operations: head, tail, cons, nil and concatenation</li>
+        <li>head and tail are &quot;selectors&quot; as they return values</li>
+        <li>cons and nil() are &quot;constructors&quot; as they help to construct lists  </li>
+        <li>Head and Tail operation
+          <ul>
+            <li>Given list (L) = [1,2,7,9,2,5]
+              <ul>
+                <li>head(L) = 1, tail(L) = [2,7,9,2,5]</li>
+              </ul>
+            </li>
+            </ul>
+          <ul>
+            <li>Equally, the head(tail(L)) = 2<ul><li>The tail(tail(L))) = [7,9,2,5]</li>
+                <li>The head(tail(tail(tail(L)))) = 9</li>
+              </ul>
+            </li>
+            <li>In fact, any element of the list is accessible using head and tail</li>
+            <li>Given set [1,3,9,4,6]
+              <ul>
+                  <li>tail(tail(tail(tail(tail([1,3,9,4,6]))))) = []</li>
+                <li>Similarly, head([1]) = 1, tail([1]) = [ ]</li>
+                <li>For the empty list, head and tail are not defined, just as n divided by zero for any value of n is undefined</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>cons() and nil() operations
+          <ul>
+            <li>A list can be created in three steps:
+              <ul>
+                <li>Cons 8 onto nil, the empty list</li>
+                <li>Cons 1 onto the result</li>
+                <li>Cons 7 onto the result</li>
+              </ul>
+            </li>
+            <li>which is equivalent to the single expression:
+              <ul>
+                <li>cons7 (cons1 (cons(8 nil())))</li>
+                <li>The above gives a list [7,1,8]</li>
+              </ul>
+            </li>
+            <li>The nil() function effectively inserts a [] into the list at its end. </li>
+          </ul>
+        </li>
+        </ul>
+      <ul>
+        <li>List concatenation
+          <ul>
+            <li>We can also join lists together with the &quot;concatenate&quot; operation</li>
+            <li>[1,2,6,3] concatenated with [2,5,6,7] gives a list [1,2,6,3,2,5,6,7]</li>
+            <li>The @ symbol is commonly used to express this. So for example:</li>
+            <li>[Portugal, Brazil, Germany] @ [Spain, Holland] = [Portugal, Brazil, Gemany, Spain, Holland]</li>
+          </ul>
+        </li>
+        </ul>
+</div>
+<div class="content-header">How do list handle problem?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>We would like to introduce two two data structure: Queue and Stack</li>
+        <li>A Queue (FIFO) 
+          <ul>
+            <li>A very common problem we wish to deal with some items is the order. For example the order in which they occur.</li>
+            <li>We use a Queue. The rules of which are declared as First In First Out (FIFO).</li>
+            <li><img src="../img/logic/lists/lists_01.png"/></li>
+            <li>Examples
+              <ul>
+                <li>People waiting at the post office</li>
+                <li>Jobs waiting for the printer</li>
+                <li>Calls waiting to be answered</li>
+              </ul>
+            </li>
+            </ul>
+          <ul>
+            <li>Modelling a queue 
+              <ul>
+                <li>Modelling a queue of print jobs as a list Q:</li>
+              <li>Q=[jobIDX04, jobIDX02, jobIDX03, jobIDX05, jobIDX07]</li>
+                  <li>How would you get the ID of the first job in the queue?
+                    <ul>
+                      <li>Ans: head(Q) =jobIDX04</li>
+                    </ul>
+                  </li>
+                  <li>How would Q change after that job is completed?
+                    <ul>
+                      <li>Ans:  Q'=tail(Q)</li>
+                    </ul>
+                  </li>
+                  <li>How would I add the jobs from printer queue P to the end of Q?
+                    <ul>
+                      <li>Ans: Q'=Q @ P</li>
+                    </ul>
+                  </li>
+                  <li>How is a new job added?
+                    <ul>
+                      <li>Ans: Q'=Q @ [jobIDX08]</li>
+                    </ul>
+                  </li>
+                </ul></li>
+          </ul>
+        </li>
+        </ul>
+      <ul>
+        <li>A Stack (LIFO)
+          <ul>
+            <li>Used to handle the most recent item that arrives  first. Last In, First Out (LIFO)</li>
+            <li>A fundamental data structure in Computer Science. Very important to function calls, interrupts, memory allocation etc.</li>
+            <li><img src="../img/logic/lists/lists_02.png"/></li>
+            <li>Examples:
+              <ul>
+                <li>Stack of plates  or Chairs</li>
+                <li>&quot;Undo&quot; button</li>
+                <li>Interrupt handling</li>
+                <li>Finding your way home</li>
+              </ul>
+            </li>
+            <li>Operations:
+              <ul>
+                <li>You can add to the top of the stack - &quot;push&quot;
+                  <ul>
+                    <li>push(3, [2,5,6,7]) = [2,5,6,7,3]</li>
+                  </ul>
+                </li>
+                <li>You can remove from the top of the stack - &quot;pop&quot;
+                  <ul>
+                    <li>pop([2,5,6,7]) =  [2,5,6]</li>
+                  </ul>
+                </li>
+                <li>Stacks grow upwards (theoretically at least)</li>
+              </ul>
+            </li>
+            </ul>
+        </li>
+        </ul>
+</div>
+</div>
+<div id="footer"><p>Copyright © 2012 LIBT. All Rights Reserved. | <a href="../reference.html">Reference</a> | <a href="../admin-panel.jsp" id="open-login-box">admin panel</a></p></div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

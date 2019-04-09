@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>State Transition Diagram - Brunel Computing Study Guide</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<script type="text/javascript" src="../lib/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../script/turn_tab.js"></script>
+<script type="text/javascript" src="../script/toggle_topics.js"></script>
+<script type="text/javascript" src="../script/cookie.js"></script>
+<script type="text/javascript" src="../script/validate.js"></script>
+<script type="text/javascript" src="../script/show_message.js"></script>
+<script type="text/javascript" src="../script/show_form_message.js"></script>
+<script type="text/javascript" src="../script/show_login2.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="header">
+<a id="banner" href="../index.html"></a>
+<div id="main_nav">
+<a href="../index.html">HOME</a>
+<a href="../revision.html">REVISION</a>
+<a href="../view-question.jsp">VIEW QUESTION</a>
+<a href="../about.html">ABOUT</a>
+<a href="../contact.html">CONTACT</a>
+<a class="link-button" href="../ask-question.html">ASK QUESTION</a>
+</div>
+</div>
+
+<div id="main-wrapper">
+
+<div id="sidebar">
+<h3><a class="local_nav_header" href="index.html">Logic and Computation</a></h3>
+<p><a class="local_nav_item" href="set.html">Sets Theory</a></p>
+<p><a class="local_nav_item" href="lists.html">Lists</a></p>
+<p><a class="local_nav_item" href="graph_theory.html">Graph Theory</a></p>
+<p><a class="local_nav_item" href="std.html">State Transition Diagram</a></p>
+<p><a class="local_nav_item" href="fsm.html">Finite State Machine</a></p>
+<p><a class="local_nav_item" href="compiler.html">Compilers</a></p>
+</div>
+
+<div id="content_wrapper">
+<div id="tab_01" class="tab activated_tab"><a href="#">Key Concept</a></div>
+<div id="tab_02" class="tab"><a href="#">Examples</a></div>
+<div id="tab-content_01" class="content content_with_tab"> 
+<h1>State Transition Diagram</h1>
+
+<div class="content-header">Who invent State Transition Diagram?</div>
+<div class="content-paragraph"> 
+  <ul>
+        <li>The STD was invented in the 50’s at Bell Laboratories to solve process control problems related to switching of telephone calls.</li>
+        <li>Sooner later, such graphic technique became useful for electrical engineers</li>
+        <li>Since then, the STD became a powerful Computer Aided Software Engineering (CASE) tool which is useful across most of the software life cycle.</li>
+      </ul>
+</div>
+<div class="content-header">What is State Transition Diagram (STD) all about?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>Shows the static view of a system or an object</li>
+        <li>Shows the behaviour of a system or an object</li>
+        <li>Describes objects or systems’ activity and  availability</li>
+        <li>Basically, a state is a condition or situation during the life of a system/object, during which it satisfies some condition, performs some activity, or waits for some event</li>
+      </ul>
+</div>
+<div class="content-header">Why is STD important?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>An essential concept in analysis and systems theory</li>
+        <li>Enable us to reason about what is possible,  what and when are the next possible states </li>
+        <li>Help us to know what causes transitions/moves between states?</li>
+        <li>Help us to create models of behaviour</li>
+        <li>Example can be:
+          <ul>
+            <li>making a cup of tea (a real world object)</li>
+            <li>Data or context flow diagram (computer science environment)</li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">How computer systems and STD are so linked?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>An STD is a way of describing the time-dependent behaviour of a computer system.</li>
+        <li>With a state, you can observe mode of behaviour of the computer system.</li>
+        <li>Think about an ATM cash Machine, a drink vendor machine, a mobile phone, an i-pod, online transaction, an elevator, a traffic light, landline call waiting, TV channels and others. Do you actually know that these are all linked with STD.</li>
+        <li>An important special case of dynamic behaviour is the interaction between human users and a system.</li>
+      </ul>
+</div>
+<div class="content-header">How to represent State?</div>
+<div class="content-paragraph"> 
+  <ul>
+        <li>A state is denoted by a node:
+          <ul>
+            <li><img src="../img/logic/std/std_01.png"/></li>
+          </ul>
+        </li>
+        <li>We normally include the name of the state inside the node, so for example, ‘on’ or ‘off’</li>
+        <li>A light switch may have  two states; ‘on’ and ‘off’
+          <ul>
+            <li><img src="../img/logic/std/std_02.png"/></li>
+          </ul>
+        </li>
+        <li>What about a light switch with states of ‘on’, ‘dim’ and ‘off’. How many states?</li>
+        <li>Large systems may have millions of states</li>
+      </ul>
+</div>
+<div class="content-header">How to represent Transition?</div>
+<div class="content-paragraph"> 
+  <ul>
+        <li>Transition is denoted by an arrow  <img src="../img/logic/std/std_03.png"/></li>
+        <li>The arrow is called an ‘arc’ and the arc which indicates the start or initial state is always unlabelled
+          <ul>
+            <li><img src="../img/logic/std/std_04.png"/></li>
+          </ul>
+        </li>
+        <li>We also have ‘normal' arcs which we label with the event on that arc:
+          <ul>
+            <li><img src="../img/logic/std/std_05.png"/></li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">All in all, what is the notation of STD?</div>
+<div class="content-paragraph"> 
+  <ul>
+          <li>Below are examples of the notations that are required to develop a simple STD.</li>
+          <li><img src="../img/logic/std/std_06.png"/></li>
+          <li><img src="../img/logic/std/std_07.png"/></li>
+        </ul>
+</div>
+<div class="content-header">STD, Principles and behaviour</div>
+<div class="content-paragraph"> 
+ <ul>
+        <li>Generally, there is an initial state. We have to start from somewhere. In the case of the DVD Player, we can start from play
+          <ul>
+            <li><img src="../img/logic/std/std_08.png"/></li>
+          </ul>
+        </li>
+        <li>If input is received, one of the transitions is triggered, possibly producing output and changing the state.                           
+          <ul>
+            <li><img src="../img/logic/std/std_09.png"/></li>
+          </ul>
+        </li>
+        <li>The state diagram tell us which state is reached when an operation is used. In the example below, the state of play is reached</li>
+        <li>It also tells us which sequences of operations are allowed. In the example below, the sequence is from press_stop to press_play
+          <ul>
+            <li><img src="../img/logic/std/std_10.png"/></li>
+          </ul>
+        </li>
+        <li>Sometimes, the state doesn’t change when we apply an event to a system.</li>
+        <li>For example:
+          <ul>
+            <li>Imaging you are using a DVD player
+              <ul>
+                <li>If you attempt to stop DVD player when it is already  on ‘stop’, the outcome will be</li>
+                <li><img src="../img/logic/std/std_11.png"/></li>
+                <li>Similarly, If you attempt to play the DVD player when it is already  on ‘play’, the outcome will be</li>
+                <li><img src="../img/logic/std/std_12.png"/></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">Hints for creating STDs</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>We describe the transition between states</li>
+        <li>To make a good STD we need to know why we are making it.</li>
+        <li>This indicates which states we are interested in.</li>
+        <li>We need to know which transitions we are interested in and why are they important</li>
+        <li>You must have a taste by now about how states and transitions are vital in computer science; ATM cash machine, elevator, online transaction and others.</li>
+      </ul>
+</div>
+
+</div>
+<div id="tab-content_02" class="content content_with_tab">
+<h1>State Transition Diagram</h1>      
+
+<h2>State Transition diagram: A light switch example</h2>
+  <ul>
+        <li>The following represents a light switch.
+          <ul>
+            <li>There are two states: on and off</li>
+            <li>There are two events: turn_on and turn_off</li>
+            <li>Initial state is at ‘state off’. If you turn off on the state ‘off’, the state does not change. The same concept is applied if initial state is on state on.</li>
+            <li>From the initial state, the sequence of the light switch can only be turn_on and back to turn_off</li>
+            <li><img src="../img/logic/std/std_13.png"/></li>
+          </ul>
+        </li>
+      </ul>
+	  
+<h2>State Transition diagram: Advanced light switch example</h2>
+  <ul>
+        <li>The following represents a light switch.
+          <ul>
+            <li>There are three states: on, dim and off</li>
+            <li>There are three events: ‘turn_on’, ‘turn_dim’ and ‘turn_off’</li>
+            <li>Initial state is at ‘state off’. If you turn off on the state ‘off’, the state does not change. The same concept is applied for the other two states: ‘on’; and ‘dim’.</li>
+            <li>From the initial state, the sequence of the light switch can only be turn_dim, turn_on and back to turn_off</li>
+            <li><img src="../img/logic/std/std_14.png"/></li>
+          </ul>
+        </li>
+      </ul>
+
+</div>
+<div id="footer"><p>Copyright © 2012 LIBT. All Rights Reserved. | <a href="../reference.html">Reference</a> | <a href="../admin-panel.jsp" id="open-login-box">admin panel</a></p></div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

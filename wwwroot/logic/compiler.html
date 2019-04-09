@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Lists - Brunel Computing Study Guide</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<script type="text/javascript" src="../lib/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../script/turn_tab.js"></script>
+<script type="text/javascript" src="../script/toggle_topics.js"></script>
+<script type="text/javascript" src="../script/cookie.js"></script>
+<script type="text/javascript" src="../script/validate.js"></script>
+<script type="text/javascript" src="../script/show_message.js"></script>
+<script type="text/javascript" src="../script/show_form_message.js"></script>
+<script type="text/javascript" src="../script/show_login2.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="header">
+<a id="banner" href="../index.html"></a>
+<div id="main_nav">
+<a href="../index.html">HOME</a>
+<a href="../revision.html">REVISION</a>
+<a href="../view-question.jsp">VIEW QUESTION</a>
+<a href="../about.html">ABOUT</a>
+<a href="../contact.html">CONTACT</a>
+<a class="link-button" href="../ask-question.html">ASK QUESTION</a>
+</div>
+</div>
+
+<div id="main-wrapper">
+
+<div id="sidebar">
+<h3><a class="local_nav_header" href="index.html">Logic and Computation</a></h3>
+<p><a class="local_nav_item" href="set.html">Sets Theory</a></p>
+<p><a class="local_nav_item" href="lists.html">Lists</a></p>
+<p><a class="local_nav_item" href="graph_theory.html">Graph Theory</a></p>
+<p><a class="local_nav_item" href="std.html">State Transition Diagram</a></p>
+<p><a class="local_nav_item" href="fsm.html">Finite State Machine</a></p>
+<p><a class="local_nav_item" href="compiler.html">Compilers</a></p>
+</div>
+
+<div id="content_wrapper">
+<div id="tab_01" class="tab activated_tab"><a href="#">Key Concept</a></div>
+<div id="tab_02" class="tab"><a href="#">Summary</a></div>
+<div id="tab-content_01" class="content content_with_tab"> 
+<h1>Compilers</h1>
+
+<div class="content-header">What is Compilers?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>A program that reads a program written in one language (source language) and translates it into another language (target language).</li>
+        <li><img src="../img/logic/compiler/compiler_01.png" height="116" width="425"/></li>
+        <li>A source program/code is a program/code written in the source language, which is usually a high-level language</li>
+        <li>A target program/code is a program/code written in the target language, which often is a machine language or an intermediate code.</li>
+      </ul>
+</div>
+<div class="content-header">What is the role of syntax?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>How does a compiler check that your code is syntactically correct?</li>
+        <li>It needs to ensure this before it can produce run-time code (machine code) which can then be executed
+          <ul>
+            <li>If there are syntax errors, then they need to be removed before you can re-compile</li>
+          </ul>
+        </li>
+        <li>Different from logical errors in your program (perhaps prolog will be useful here)</li>
+      </ul>
+</div>
+
+<div class="content-header">Compilers and Backus Naur Notation  (BNF)</div>
+<div class="content-paragraph"> 
+        <ul>
+          <li>In the past 30 years Noam Chomsky and others have developed new ways to describe the syntax  (or grammatical structure) of natural languages such as English.</li>
+          <li>This work has proven useful in constructing compilers for level computer languages</li>
+          <li>It is customary to express rules using Backus-Naur notation.</li>
+          <li>In the notation, the symbol | represents the word or; and angle brackets  &lt; &gt; are used to enclose terms to be defined</li>
+        </ul>
+</div>
+
+<div class="content-header">Grammar symbols for BNF</div>
+<div class="content-paragraph"> 
+        <ul>
+          <li>Example of BNF grammar symbols can be:
+            <ul>
+              <li>::=  is (is defined as)</li>
+              <li>=&gt; is (is defined as)</li>
+              <li>&amp;   then (followed by)</li>
+              <li>|     or (sometimes implicit)</li>
+              <li>[ ] optional</li>
+              <li>;    end of definition</li>
+              <li>()    bracketing</li>
+            </ul>
+          </li>
+        </ul>
+</div>
+
+<div class="content-header">Two types of structure</div>
+<div class="content-paragraph"> 
+        <ul>
+          <li>BNF definitions contain two types of structure</li>
+          <li>
+            <ul>
+              <li>Terminals – Cannot be reduced</li>
+              <li>
+                <ul>
+                  <li>Symbol used: 'Terminals '
+                    <div>
+                      <ul>
+                        <li>&lt;drink&gt;::= 'tea’ | ‘coffee’</li>
+                        <li>&lt;course&gt;::= ‘IS’ | ‘CS’</li>
+                        <li>are examples of terminal</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>Non-Terminals – Contain substructures</li>
+              <li>
+                <ul>
+                  <li>Symbol used:&lt;Non-Terminals&gt;</li>
+                  <li>
+                    <ul>
+                      <li>&lt;contact&gt;::=&lt;name&gt; &lt;number&gt;</li>
+                      <li>&lt;contact&gt;::=&lt;name&gt;&lt;number&gt;&lt;address&gt;</li>
+                      <li>are examples of non terminal</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>More Examples:</li>
+              <li>
+                <ul>
+                  <li>Suppose we wanted to define a number of spoon of sugars between 1 and 4</li>
+                  <li>
+                    <ul>
+                      <li>&lt;drink&gt;::=('tea'|'coffee') [&lt;sugar&gt;]</li>
+                      <li>&lt;sugar&gt;::='sugar' &lt;amount&gt;</li>
+                      <li>&lt;amount&gt;::= ‘1’| ‘2’| ‘3’| ‘4’</li>
+                    </ul>
+                  </li>
+                  <li>Another BNF example: postal address
+                    <ul>
+                      <li>&lt;postal-address&gt; ::= &lt;name-part&gt; &lt;street-address&gt; &lt;postcode-part&gt;
+                                <ul>
+                                  <li>A postal address consists of a name-part, followed by a street address part, followed by a postcode part.</li>
+                                </ul>
+                      </li>
+                      <li>&lt;name-part&gt; ::= &lt;personal-part&gt; &lt;last-name&gt;  
+                        <ul>
+                          <li>A name-part consists of a personal-part followed by a last name.</li>
+                        </ul>
+                      </li>
+                      <li>&lt;personal-part&gt; ::= &lt;first-name&gt; | &lt;initial&gt; &quot;.&quot;
+                                <ul>
+                                  <li>A personal-part consists of either a first name or an initial followed by a dot.</li>
+                                </ul>
+                      </li>
+                      <li>&lt;street-address&gt; ::= &lt;house-num&gt; &lt;street-name&gt; 
+                        <ul>
+                          <li>A street address consists of a house number, followed by a street name.</li>
+                        </ul>
+                      </li>
+                      <li>&lt;postcode-part&gt; ::= &lt;town-name&gt; &quot;,&quot; &lt;county-name&gt; “,” &lt;post-code&gt; 
+                        <ul>
+                          <li>A postcode-part consists of a town-name, followed by a comma, followed by a county-name , followed by a comma, followed by a post-code.</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+</div>
+
+<div class="content-header">BNF – Numbers</div>
+<div class="content-paragraph"> 
+   <ul>
+        <li>all we have defined is a digit (0, 1, 8, 9…), not a number
+          <ul>
+            <li>For example, a mobile phone has got 11 digit numbers</li>
+          </ul>
+        </li>
+        <li>In mathematics and computer science, a digit is a symbol (e.g. “2&quot; or “9&quot;) to represent numbers, e.g. 29</li>
+        <li>For numbers we can say, if:</li>
+        <li>     &lt;digit&gt; -&gt; 0 |1|2|3|4|5|6|7|8|9</li>
+        <li>A number is a digit or sequence of digits:
+          <ul>
+            <li>&lt;num&gt; -&gt;  &lt;digit&gt; | &lt;digit&gt; &lt; num&gt;</li>
+          </ul>
+        </li>
+        <li>In words….’a number is a digit or a digit followed by 1 or a sequences of digits’, e.g. 8, 9 7, 543, 3769 and so on.</li>
+        <li>So, we could have as valid numbers:
+          <ul>
+            <li>5, 01, 011, 2, 20, 201, 200, 3, 30000…</li>
+            <li>In fact any number we wanted</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>Suppose we wanted positive and negative numbers in our language:
+              <ul>
+                  <li>&lt;digit&gt; -&gt; 0 |1|2|3|4|5|6|7|8|9</li>
+                  <li>&lt;num&gt; -&gt; &lt;digit&gt; | &lt;digit&gt; &lt; num&gt;</li>
+                  <li>&lt;integer&gt; -&gt; &lt;num&gt; | + &lt;num&gt; | - &lt;num&gt;</li>
+                <li>In words, this is saying that ‘we can have an unsigned integer, or one with a plus sign on the front or one with a negative sign on the front of it’</li>
+                <li>So, some valid integers: +2, -33333, 45</li>
+                <li>By our language -0 and +0 are still possible numbers</li>
+              </ul>
+        </li>
+        <li>Suppose, we wanted some real numbers in our language, the following adjustments would help:
+              <ul>
+                <li>&lt;real&gt; -&gt;  &lt;sign&gt; &lt; unsigned&gt;</li>
+                <li>&lt;sign&gt; -&gt; + | -</li>
+                <li>&lt;unsigned -&gt; &lt;num&gt;  | &lt;num&gt; . &lt;num&gt;</li>
+                <li>&lt;num&gt; -&gt; &lt;digit&gt; | &lt;digit&gt; &lt; num&gt;   (done already)</li>
+              </ul>
+          <ul><li>So as an example, we can have:
+              <ul>
+                <li>+1 or +41 or +1.3 or +1.36 or +56.28</li>
+                <li>-3 or -90 or -2.5 or -4.87988888</li>
+              </ul>
+          </li>
+          </ul>
+        </li>
+        <li>We now want construct predicate expressions that compare two real numbers:
+          <ul>
+            <li>For example
+              <ul>
+                <li>0.8 &gt; 0.6 :0.8 is greater than 0.6</li>
+                <li>-4.1 &lt;= 3 :-4.1 is less than or equal to 3</li>
+              </ul>
+            </li>
+            <li>Easily done:
+              <ul>
+                <li>&lt;expr&gt; -&gt; &lt;real&gt; &lt;realop&gt; &lt;real&gt;</li>
+                <li>&lt;realop&gt; -&gt; '&gt;' | '&lt;=' | '&lt;' | '&gt;=' | '&lt;&gt;' | '=='</li>
+                <li>&lt;real&gt; -&gt;  &lt;sign&gt; &lt; unsigned&gt;</li>
+                <li>&lt;sign&gt; -&gt; + | -</li>
+                <li>&lt;unsigned -&gt; &lt;num&gt;  | &lt;num&gt; . &lt;num&gt;</li>
+                <li>&lt;digit&gt; -&gt; 0 |1|2|3|4|5|6|7|8|9</li>
+                <li>&lt;num&gt; -&gt; &lt;digit&gt; | &lt;digit&gt; &lt; num&gt;</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">BNF – Programs</div>
+<div class="content-paragraph"> 
+    <ul>
+        <li>&lt;assign&gt; -&gt; &lt;identifier&gt; = &lt;real&gt;</li>
+        <li>&lt;identifier&gt; -&gt; x | y | z</li>
+        <li>&lt;real&gt; -&gt;  &lt;sign&gt; &lt; unsigned&gt;</li>
+        <li>&lt;sign&gt; -&gt; + | -</li>
+        <li>&lt;unsigned -&gt; &lt;num&gt;  | &lt;num&gt; . &lt;num&gt;</li>
+        <li>This will allow us to produce statements like:
+          <ul>
+            <li>x = +2.34</li>
+            <li>y = -234.789</li>
+            <li>Z = +12</li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<div class="content-header">BNF – Statement</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>If we now wanted to model expressions:
+          <ul>
+            <li>For example:</li>
+            <li>x &gt; y</li>
+            <li>x &lt;= y</li>
+          </ul>
+        </li>
+        <li>Easily done:
+          <ul>
+            <li>&lt;expression&gt; -&gt; &lt;identifier&gt; &lt;op&gt; &lt;identifier&gt;</li>
+            <li>&lt;op&gt; -&gt; &gt; | &lt;= | &lt; | &gt;= | &lt;&gt; | ==</li>
+            <li>identifier -&gt; x | y</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>The following set of Backus-Naur Form (BNF) clauses define the syntax of a very small programming language:
+            <ul>
+              <li>&lt;expression&gt; -&gt;  &lt;identifier&gt; &lt;operator&gt;  &lt;real&gt;</li>
+              <li>&lt;identifier&gt; -&gt; a | b</li>
+              <li>&lt;operator&gt; -&gt; * | - | +</li>
+              <li>&lt;real&gt; -&gt;  &lt;sign&gt; &lt; unsigned&gt;</li>
+              <li>&lt;sign&gt; -&gt; + | -</li>
+              <li>&lt;unsigned -&gt; &lt;num&gt;  | &lt;num&gt; . &lt;num&gt;</li>
+              <li>&lt;num&gt; -&gt; 1 | 2 </li>
+            </ul>
+        </li>
+      </ul>
+</div>
+
+</div>
+<div id="tab-content_02" class="content content_with_tab">
+<h1>Compilers</h1>      
+<h2>Summary</h2>
+      <ul>
+        <li>BNF allows us to define valid sentences</li>
+        <li>It allows us to build-up a program syntax</li>
+        <li>We can then implement those rules – giving us the language</li>
+        <li>Small languages are fun</li>
+      </ul>
+
+</div>
+<div id="footer"><p>Copyright © 2012 LIBT. All Rights Reserved. | <a href="../reference.html">Reference</a> | <a href="../admin-panel.jsp" id="open-login-box">admin panel</a></p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

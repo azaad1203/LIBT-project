@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Sets Theory - Brunel Computing Study Guide</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<script type="text/javascript" src="../lib/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../script/turn_tab.js"></script>
+<script type="text/javascript" src="../script/toggle_topics.js"></script>
+<script type="text/javascript" src="../script/cookie.js"></script>
+<script type="text/javascript" src="../script/validate.js"></script>
+<script type="text/javascript" src="../script/show_message.js"></script>
+<script type="text/javascript" src="../script/show_form_message.js"></script>
+<script type="text/javascript" src="../script/show_login2.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="header">
+<a id="banner" href="../index.html"></a>
+<div id="main_nav">
+<a href="../index.html">HOME</a>
+<a href="../revision.html">REVISION</a>
+<a href="../view-question.jsp">VIEW QUESTION</a>
+<a href="../about.html">ABOUT</a>
+<a href="../contact.html">CONTACT</a>
+<a class="link-button" href="../ask-question.html">ASK QUESTION</a>
+</div>
+</div>
+
+<div id="main-wrapper">
+
+<div id="sidebar">
+<h3><a class="local_nav_header" href="index.html">Logic and Computation</a></h3>
+<p><a class="local_nav_item" href="set.html">Sets Theory</a></p>
+<p><a class="local_nav_item" href="lists.html">Lists</a></p>
+<p><a class="local_nav_item" href="graph_theory.html">Graph Theory</a></p>
+<p><a class="local_nav_item" href="std.html">State Transition Diagram</a></p>
+<p><a class="local_nav_item" href="fsm.html">Finite State Machine</a></p>
+<p><a class="local_nav_item" href="compiler.html">Compilers</a></p>
+</div>
+
+<div id="content_wrapper">
+<div id="tab_01" class="tab activated_tab"><a href="#">Key Concept</a></div>
+<div id="tab_02" class="tab"><a href="#">Book Recommendation</a></div>
+<div id="tab-content_01" class="content content_with_tab"> 
+<h1>Sets Theory</h1>
+
+<div class="content-header">What are Sets?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>A set is a well defined group of items</li>
+        <li>Sets are made up of ‘elements’ e.g. The set of students at LIBT</li>
+      </ul>
+</div>
+<div class="content-header">How to Represnt Sets ?</div>
+<div class="content-paragraph"> 
+ <ul>
+        <li>Venn diagrams
+          <ul>
+            <li>A={1,2,3,4,5,6},B={2,3,5},C={2,4,6,8}</li>
+            <li><img src="../img/logic/set/set_01.png"/></li>
+          </ul>
+        </li>
+        <li>Enumerated form:
+          <ul>
+            <li>Positive even numbers &lt;10  : {2,4,6,8} </li>
+            <li>Positive even nos. &lt;=50 : {2,4,6,8,…,50}</li>
+            <li>Positive even numbers  : {2,4,6,8,…} </li>
+            <li>Prime numbers &lt;20  :{2,3,5,7,11,13,17,19}</li>
+          </ul>
+        </li>
+        <li>Predicate form
+          <ul>
+            <li>{x | x is even and 0 &lt; x &lt;= 50}</li>
+            <li>{x | P(x)}</li>
+          </ul>
+        </li>
+        <li>Special Sets:
+          <ul>
+            <li>N (the natural numbers) = {1,2,3,4,…}</li>
+            <li>Z (the integers) ={…,-3,-2,-1,0,1,2,3,…}</li>
+            <li>R is the set of real numbers – any number which can be written in decimal expansion e.g., 3.234</li>
+            <li>The null (sometimes called the empty set): Ø or  in enumerated form { }</li>
+            <li>The universal set: ξ
+              <ul>
+                <li>The set of all people in the world maybe the universal set if we are analysing population studies</li>
+                <li>The set of points on a line may be the universal set if we are talking about geometry</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+  </ul>
+</div>
+<div class="content-header">How to Represent Relationship Between Sets and its Elements ?</div>
+<div class="content-paragraph"> 
+ <ul>
+          <li>Membership
+            <ul>
+              <li>For the set A = {3,2}
+                <ul>
+                  <li>When an element is a member of set, the notation would be: 3 ∈ A, 2 ∈ A</li>
+                  <li>When an element is not a member of set, the notation would be: 6 ∉ A, 5 ∉ A</li>
+                </ul>
+              </li>
+              <li>This is the formal notation, rather than the English language equivalent</li>
+              <li>Sets cannot contain repeated elements, i.e. A = {3,3,2} is invalid</li>
+              <li>Sets can also contain other data types, e.g. strings</li>
+              <li>Not normal to mix types in a set</li>
+            </ul>
+          </li>
+          <li>Subsets
+            <ul>
+              <li>Two sets A and B; B is defined as a subset of A (represented B ⊆ A), when all elements of B are also elements in A.</li>
+              <li>Example: A = {1,2,3,4,5,6}, B = {2,3,5}, C = {2,4,6,8}</li>
+              <li>B ⊆ A, but 8 ∈ C, but 8 ∉ A, so C is not a subset of A</li>
+              <li>Implications:
+                <ul>
+                  <li>Notice that N ⊆ Z ⊆ R</li>
+                  <li>If s = Ø and t = Ø then s = t  </li>
+                  <li>For any set A, A ⊆ A and Ø ⊆ A</li>
+                  <li>If S ⊆ T and T ⊆ S, then S = T</li>
+                </ul>
+              </li>
+              <li>Proper Subset:
+                <ul>
+                  <li>B is a proper subset of A if: </li>
+                  <li>B ⊆ A and B ≠ A</li>
+                  <li>Example: A = {1,3,5,7} and B = {1,3,5}  then B is a proper subset of A</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Cardinality
+            <ul>
+              <li>Cardinality is the number of elements in the set A, may denoted by n(<em>A</em>), <em>A</em>, or # <em>A</em>. 
+                <ul>
+                  <li>A = {1,2,3,4,5}, n(A) = 5</li>
+                  <li>B = {2,4,6,…,20}, n(B) = 10</li>
+                </ul>
+              </li>
+              <li>If P ⊆ Q, then n(P) ≤ n(Q)</li>
+            </ul>
+          </li>
+          <li>Powerset
+            <ul>
+              <li>Powerset of set S consists of all the subsets of set S</li>
+              <li>Powerset of {1, 3} -&gt; {{ }, {1}, {3}, {1,3}}</li>
+              <li>We denote the powerset of S as: P (S)</li>
+            </ul>
+          </li>
+        </ul>
+</div>
+<div class="content-header">What is Set Operation?</div>
+<div class="content-paragraph"> 
+      <ul>
+        <li>There are 4 operators for sets:
+          <ul>
+            <li>Union                A ∪ B
+              <ul>
+                <li>A ∪ B = {x | x ∈ A  or  x ∈ B}</li>
+                <li><img src="../img/logic/set/set_02.png"/></li>
+              </ul>
+            </li>
+            
+            <li>Intersection          A ∩ B
+              <ul>
+                <li>A ∩  B = {x | x ∈ A and x ∈ B}</li>
+                <li><img src="../img/logic/set/set_03.png"/></li>
+              </ul>
+            </li>
+            <li>Complement          ¬A (sometimes Ā)
+              <ul>
+                <li>¬A = {x | x ∈ ξ and x ∈A}</li>
+                <li><img src="../img/logic/set/set_04.png"/></li>
+              </ul>
+            </li>
+            <li>Difference          A – B (sometimes A \ B)
+              <ul>
+                <li>A - B = {x | x ∈ A and x ∈ B}</li>
+                <li><img src="../img/logic/set/set_05.png"/></li>
+              </ul>
+            </li>
+            <li>The fundamental Laws of Sets
+              <div>
+                <ul>
+                  <li>Double complement law 
+                    <ul>
+                      <li>¬(¬A) = A</li>
+                    </ul>
+                  </li>
+                  <li>Idempotent law         
+                    <ul>
+                      <li>A ∩ A = A                        </li>
+                      <li>A ∪ A = A</li>
+                    </ul>
+                  </li>
+                  <li>Commutative law        
+                    <ul>
+                      <li> A ∩ B = B ∩ A                       </li>
+                      <li> A ∪ B = B ∪ A</li>
+                    </ul>
+                  </li>
+                  <li>Associative laws    
+                    <ul>
+                      <li>(A ∩ B) ∩ C = A ∩ (B ∩ C)           </li>
+                      <li>(A ∪ B) ∪ C = A ∪ (B ∪ C)</li>
+                    </ul>
+                  </li>
+                  <li>Distributive Laws   
+                    <ul>
+                      <li>A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)            </li>
+                      <li>A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</li>
+                    </ul>
+                  </li>
+                  <li>Identity laws         
+                    <ul>
+                      <li>A ∩ ξ = A                   </li>
+                      <li>A ∪ Ø = A</li>
+                    </ul>
+                  </li>
+                  <li>Annihilation laws    
+                    <ul>
+                      <li>A ∩ Ø = Ø                    </li>
+                      <li>A ∪ ξ = ξ</li>
+                    </ul>
+                  </li>
+                  <li>Inverse laws         
+                    <ul>
+                      <li>A ∩ ¬A = Ø                   </li>
+                      <li>A ∪ ¬A = ξ</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+</div>
+<div class="content-header">Where does this lead us?</div>
+<div class="content-paragraph"> 
+  <ul>
+        <li>Set theory is the key mathematical tool for making arguments and reasoning about objects and their relationships to each other (Relations &amp; Functions).</li>
+        <li>We will be using sets to define other structures in this course – Graphs, Finite State Machines etc and use set properties to reason about their type and behaviour.</li>
+        <li>Formal specification of programs
+          <ul>
+            <li>Descriptions of programs that can be mathematically proven to be correct</li>
+          </ul>
+        </li>
+  </ul>
+</div>
+
+</div>
+<div id="tab-content_02" class="content content_with_tab">
+<h1>Sets Theory</h1>      
+<h2>Some Book</h2>
+<ul>
+        <li>Mathematics: From the Birth of Numbers – Jan Gullberg</li>
+        <li>Discrete Mathematics with Applications – Susanna S Epp</li>
+        <li>Using Z : Specification, Refinement and Proof – J C P Woodcock</li>
+        <li>Schaum's Outline of Discrete Mathematics – Lipschutz and Lipson</li>
+        <li>Foundations of Discrete Mathematics – Polimeni and Straight</li>
+</ul>
+
+</div>
+<div id="footer"><p>Copyright © 2012 LIBT. All Rights Reserved. | <a href="../reference.html">Reference</a> | <a href="../admin-panel.jsp" id="open-login-box">admin panel</a></p></div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>
