@@ -1,0 +1,11 @@
+D:\garry\bin\Release\netcoreapp1.0\StaticContent.deps.json
+D:\garry\bin\Release\netcoreapp1.0\StaticContent.runtimeconfig.json
+D:\garry\bin\Release\netcoreapp1.0\StaticContent.runtimeconfig.dev.json
+D:\garry\bin\Release\netcoreapp1.0\StaticContent.dll
+D:\garry\bin\Release\netcoreapp1.0\StaticContent.pdb
+D:\garry\obj\Release\netcoreapp1.0\StaticContent.csprojAssemblyReference.cache
+D:\garry\obj\Release\netcoreapp1.0\StaticContent.csproj.CoreCompileInputs.cache
+D:\garry\obj\Release\netcoreapp1.0\StaticContent.AssemblyInfoInputs.cache
+D:\garry\obj\Release\netcoreapp1.0\StaticContent.AssemblyInfo.cs
+D:\garry\obj\Release\netcoreapp1.0\StaticContent.dll
+D:\garry\obj\Release\netcoreapp1.0\StaticContent.pdb
